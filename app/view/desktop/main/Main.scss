@@ -1,0 +1,26 @@
+// @import 'Application';
+
+.header-logo{
+    background: transparent url(bojack.jpg) no-repeat center center;
+    background-blend-mode: lighten;
+    background-size: cover;
+    width: 200px;
+    height: 100px;
+}
+
+@include toolbar-ui(
+    $ui: 'nav',
+    $background-color: $base-color
+);
+
+@include treelist-ui(
+    $ui: 'nav',
+    $background-color: #164e5ccb,
+    $item-text-color: #ffffff,
+    $item-icon-color: #ffffff,
+    $row-selected-background-color: $base-color,
+    $row-selected-over-background-color: #e1e1e1,
+    $item-line-height: 80px,
+    $item-text-font-size: 20px
+);
+

@@ -13,7 +13,9 @@ Ext.define('Portfolio.view.desktop.main.Main', {
         'Portfolio.view.main.MainController',
         'Portfolio.view.main.MainModel',
         'Portfolio.view.desktop.main.List',
-        'Portfolio.view.desktop.contentholder.ContentHolder'
+        'Portfolio.view.desktop.contentholder.ContentHolder',
+        'Ext.Button',
+        'Ext.Toolbar'
     ],
 
     controller: 'main',
@@ -25,19 +27,16 @@ Ext.define('Portfolio.view.desktop.main.Main', {
     items: [{
         xtype: 'toolbar',
         height: 100,
-        cls: 'header-label',
+        padding: 0,
+        ui: 'nav',
         bind: {
-            title: '{name}'
+            title: "I'm James Noah Bungag"
         },
         items: [{
             xtype: 'component',
-            width: 200,
-            padding: 0,
-            margin: 0,
-            html: 'Test'
+            userCls: 'header-logo'
         }]
-        // iconCls: 'x-fa fa-code',
-    },{
+    }, {
         xtype: 'contentholder',
         flex: 1
     }]

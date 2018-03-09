@@ -1,11 +1,12 @@
 
 Ext.define('Portfolio.view.desktop.contentholder.ContentHolder', {
-    extend: 'Ext.tab.Panel',
+    extend: 'Ext.Panel',
 
     requires: [
         'Portfolio.view.desktop.contentholder.ContentHolderController',
         'Portfolio.view.desktop.contentholder.ContentHolderModel',
-        'Portfolio.view.desktop.main.List'
+        'Portfolio.view.desktop.main.List',
+        'Portfolio.view.desktop.navigation.Navigation'
     ],
 
     controller: 'desktop-contentholder-contentholder',
@@ -17,37 +18,22 @@ Ext.define('Portfolio.view.desktop.contentholder.ContentHolder', {
     itemId: 'ContentHolder',
     defaults: {
         tab: {
-            iconAlign: 'left'
+            iconAlign: 'left',
+            width: 100
         }
     },
-
     tabBarPosition: 'left',
-
+    scrollable: true,
+    layout: 'hbox',
     items: [{
-        title: 'Home',
-        iconCls: 'x-fa fa-home',
-        layout: 'fit',
-        items: [{
-            xtype: 'mainlist'
-        }]
-    }, {
-        title: 'About',
-        iconCls: 'x-fa fa-user',
+        xtype: 'navigationlist',
+        width: 200
+    },{
+        xtype: 'panel',
+        flex: 1,
+        ui: 'dark',
         bind: {
             html: '{loremIpsum}'
         }
-    }, {
-        title: 'Photos',
-        iconCls: 'x-fa fa-users',
-        bind: {
-            html: '{loremIpsum}'
-        }
-    }, {
-        title: 'Contact',
-        iconCls: 'x-fa fa-cog',
-        bind: {
-            html: '{loremIpsum}'
-        }
-    }
-    ]
+    }]
 });

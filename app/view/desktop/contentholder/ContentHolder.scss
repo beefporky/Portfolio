@@ -1,0 +1,10 @@
+// @import 'Application';
+
+@include panel-ui(
+    $ui: 'dark',
+    $body-background-color: $base-color,
+    $body-color: #ffffff,
+    $body-font-size: 14px,
+    $body-font-weight: 300,
+    $body-padding: 20px
+);
