@@ -2,7 +2,8 @@
 
 .header-logo{
     background: transparent url(bojack.jpg) no-repeat center center;
-    background-blend-mode: lighten;
+    background-color: $base-color;
+    background-blend-mode: luminosity;
     background-size: cover;
     width: 200px;
     height: 100px;
@@ -10,7 +11,9 @@
 
 @include toolbar-ui(
     $ui: 'nav',
-    $background-color: $base-color
+    $background-color: $base-color,
+    $title-font-size: 30px,
+    $title-font-weight: 500
 );
 
 @include treelist-ui(
@@ -24,3 +27,13 @@
     $item-text-font-size: 20px
 );
 
+// h1::after{
+//     content: 'Application Developer';
+//     clear: both;
+//     font-size: 16px;
+//     font-weight: 300;
+// }
+
+// h1{
+//     margin: 0 auto;
+// }

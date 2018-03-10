@@ -14,25 +14,32 @@ Ext.define('Portfolio.view.desktop.navigation.Navigation', {
     xtype: 'navigationlist',
     alias: 'widget.navigationlist',
     ui: 'nav',
+    reference: 'navigationList',
     store: {
         root: {
             expanded: true,
             children: [{
                 text: 'Home',
                 leaf: true,
-                iconCls: 'x-fa fa-home'
+                iconCls: 'x-fa fa-home',
+                routeId: 'home'
             },
             {
                 text: 'About',
                 leaf: true,
-                iconCls: 'x-fa fa-info'
+                iconCls: 'x-fa fa-info',
+                routeId: 'about'
             },
             {
                 text: 'Contact',
                 leaf: true,
-                iconCls: 'x-fa fa-envelope'
+                iconCls: 'x-fa fa-envelope',
+                routeId: 'contact'
             }]
         }
+    },
+    listeners: {
+        selectionchange: 'onNavigationListSelectionChange'
     }
 
 });

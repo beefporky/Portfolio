@@ -7,13 +7,28 @@ Ext.define('Portfolio.view.main.MainController', {
 
     alias: 'controller.main',
 
-    onItemSelected: function (sender, record) {
-        Ext.Msg.confirm('Confirm', 'Are you sure?', 'onConfirm', this);
+    routes: {
+        ':node': 'onRouteChange'
     },
 
-    onConfirm: function (choice) {
-        if (choice === 'yes') {
-            //
-        }
+    onRouteChange: function (hashTag) {
+        hashTag = (hashTag || '').toLowerCase();
+
+        var view = this.getView(),
+            navigationList = view.down('navigationlist'),
+            store = navigationList.getStore(),
+            node = store.findNode('routeId', hashTag) ||
+                store.findNode('viewType', hashTag);
+        // item = view.child('component[routeId=' + hashTag + ']');
+
+        // if (!item) {
+        //     item = {
+        //         xtype: node.get('viewType'),
+        //         routeId: hashTag
+        //     };
+        // }
+        // view.setActiveItem(item);
+
+        navigationList.setSelection(node);
     }
 });

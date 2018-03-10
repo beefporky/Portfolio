@@ -8,3 +8,12 @@
     $body-font-weight: 300,
     $body-padding: 20px
 );
+
+.wide-photo{
+    background: transparent url(bojack.jpg) no-repeat center center;
+    background-color: $base-color;
+    background-blend-mode: luminosity;
+    background-size: cover;
+    width: 600px;
+    height: 600px;
+}

@@ -5,7 +5,6 @@ Ext.define('Portfolio.view.desktop.contentholder.ContentHolder', {
     requires: [
         'Portfolio.view.desktop.contentholder.ContentHolderController',
         'Portfolio.view.desktop.contentholder.ContentHolderModel',
-        'Portfolio.view.desktop.main.List',
         'Portfolio.view.desktop.navigation.Navigation'
     ],
 
@@ -32,8 +31,41 @@ Ext.define('Portfolio.view.desktop.contentholder.ContentHolder', {
         xtype: 'panel',
         flex: 1,
         ui: 'dark',
-        bind: {
-            html: '{loremIpsum}'
-        }
+        scrollable: true,
+        itemId: 'ContentPanel',
+        layout: {
+            type: 'vbox'
+        },
+        items: [{
+            xtype: 'container',
+            itemId: 'homeContent',
+            layout: 'center',
+            height: 500,
+            yPos: 0, //custom config
+            items: [{
+                xtype: 'component',
+                userCls: 'wide-photo'
+            }]
+        },
+        {
+            xtype: 'container',
+            itemId: 'aboutContent',
+            height: 500,
+            yPos: 500, //custom config
+            layout: 'center',
+            bind: {
+                html: '{loremIpsum}'
+            }
+        },
+        {
+            xtype: 'container',
+            itemId: 'contactContent',
+            height: 500,
+            layout: 'center',
+            yPos: 1000, //custom config
+            bind: {
+                html: '{loremIpsum}'
+            }
+        }]
     }]
 });
